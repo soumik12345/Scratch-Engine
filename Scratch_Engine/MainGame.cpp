@@ -1,4 +1,5 @@
 #include "MainGame.h"
+#include "Sprite.h"
 #include<iostream>
 #include<string>
 
@@ -25,6 +26,9 @@ MainGame::~MainGame()
 
 void MainGame::run() {
 	initSystems();
+
+	_sprite.init(-1.0f, -1.0f, 1.0f, 1.0f);
+
 	gameLoop();
 }
 
@@ -78,6 +82,7 @@ void MainGame::drawGame() {
 	glClearDepth(1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	/* // Triangle Drawing
 	glEnableClientState(GL_COLOR_ARRAY);
 	glColor3f(1.0f, 0.0f, 0.0f);
 	glBegin(GL_TRIANGLES);
@@ -87,6 +92,9 @@ void MainGame::drawGame() {
 	glVertex2f(500, 500);
 
 	glEnd();
+	*/
+
+	_sprite.draw();
 
 	SDL_GL_SwapWindow(_window);
 }
