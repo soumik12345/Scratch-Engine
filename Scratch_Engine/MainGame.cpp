@@ -1,17 +1,12 @@
 #include "MainGame.h"
 #include "Sprite.h"
+#include "GLSLProgram.h"
+#include "Errors.h"
 #include<iostream>
 #include<string>
 
 using namespace std;
 
-void fatalError(string errorString) {
-	cout << errorString << endl;
-	cout << "Enter any key to quit.... ";
-	int inp;
-	cin >> inp;
-	SDL_Quit();
-}
 
 MainGame::MainGame() {
 	_window = nullptr;
@@ -53,6 +48,14 @@ void MainGame::initSystems() {
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+
+	initShaders();
+}
+
+void MainGame::initShaders() {
+	_colorProgram.compileShaders("Shaders/colorShading.vert", "Shaders/colorShading.frag");
+	_colorProgram.addAttribute("vertexPosition");
+	_colorProgram.linkShaders();
 }
 
 void MainGame::processInput() {
@@ -94,7 +97,11 @@ void MainGame::drawGame() {
 	glEnd();
 	*/
 
-	_sprite.draw();
+	_colorProgram.use();
+
+	_sprite.draw(); // Sprite Drawing
+
+	_colorProgram.unuse();
 
 	SDL_GL_SwapWindow(_window);
 }
