@@ -20,3 +20,8 @@ Draws a single Red Triangle on the Window.
 Rendering a simple 2D sprite as a Vertex Buffer Object on screen using `GL_ARRAY_BUFFER`.
 
 <img src="https://github.com/soumik12345/Scratch-Engine/blob/master/Images/Sprite.png" width="576" height="324" />
+
+### 5. Apply Shaders on Sprite
+Applied a simple Vertex Shader and Fragment Shader on the Sprite.
+
+<img src="https://github.com/soumik12345/Scratch-Engine/blob/master/Images/Shader_on_Sprite.png" width="576" height="324" />
