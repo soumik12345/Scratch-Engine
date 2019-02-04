@@ -25,3 +25,7 @@ Rendering a simple 2D sprite as a Vertex Buffer Object on screen using `GL_ARRAY
 Applied a simple Vertex Shader and Fragment Shader on the Sprite.
 
 <img src="https://github.com/soumik12345/Scratch-Engine/blob/master/Images/Shader_on_Sprite.png" width="576" height="324" />
+
+### 6. Create Color Gradients using Shaders
+
+<img src="https://github.com/soumik12345/Scratch-Engine/blob/master/Images/Shader%20Experiments.png" width="576" height="324" />
