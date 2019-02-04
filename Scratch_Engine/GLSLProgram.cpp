@@ -12,11 +12,13 @@ GLSLProgram::GLSLProgram() : _programID(0), _vertexShaderID(0), _fragmentShaderI
 }
 
 
-GLSLProgram::~GLSLProgram()
-{
+GLSLProgram::~GLSLProgram() {
+
 }
 
 void GLSLProgram::compileShaders(const string &vertexShaderFilePath, const string &fragmentShaderFilePath) {
+
+	_programID = glCreateProgram();
 	
 	_vertexShaderID = glCreateShader(GL_VERTEX_SHADER);
 	if (_vertexShaderID == 0) {
@@ -34,8 +36,7 @@ void GLSLProgram::compileShaders(const string &vertexShaderFilePath, const strin
 
 // Links the Shaders together into a program to get a program object.
 void GLSLProgram::linkShaders() {
-	_programID = glCreateProgram();
-
+	
 	// Attach our shaders to our program
 	glAttachShader(_programID, _vertexShaderID);
 	glAttachShader(_programID, _fragmentShaderID);
@@ -61,7 +62,7 @@ void GLSLProgram::linkShaders() {
 		glDeleteShader(_fragmentShaderID);
 
 		printf("%s\n", &(errorLog[0]));
-		fatalError("Filed to Compile Shaders");
+		fatalError("Filed to sha Shaders");
 	}
 
 	// Always detach shaders after a successful link.
@@ -80,13 +81,13 @@ void GLSLProgram::addAttribute(const string &attributeName) {
 void GLSLProgram::use() {
 	glUseProgram(_programID);
 	for (int i = 0; i < _numAttributes; i++)
-		glEnableVertexAttribArray(1);
+		glEnableVertexAttribArray(i);
 }
 
 void GLSLProgram::unuse() {
 	glUseProgram(0);
 	for (int i = 0; i < _numAttributes; i++)
-		glDisableVertexAttribArray(1);
+		glDisableVertexAttribArray(i);
 }
 
 // Compiles a shader from source
