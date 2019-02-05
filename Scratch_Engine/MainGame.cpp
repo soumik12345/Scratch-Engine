@@ -2,6 +2,7 @@
 #include "Sprite.h"
 #include "GLSLProgram.h"
 #include "Errors.h"
+#include "Primitives.h"
 #include<iostream>
 #include<string>
 
@@ -15,8 +16,8 @@ MainGame::MainGame() {
 	_gameState = GameState::PLAY;
 }
 
-MainGame::~MainGame()
-{
+MainGame::~MainGame() {
+
 }
 
 void MainGame::run() {
@@ -86,23 +87,16 @@ void MainGame::drawGame() {
 	glClearDepth(1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	/* // Triangle Drawing
-	glEnableClientState(GL_COLOR_ARRAY);
-	glColor3f(1.0f, 0.0f, 0.0f);
-	glBegin(GL_TRIANGLES);
+	drawDDALine(0, 0, 300, 500);
 
-	glVertex2f(0, 0);
-	glVertex2f(0, 500);
-	glVertex2f(500, 500);
-
-	glEnd();
-	*/
-
+	/*
 	_colorProgram.use();
 
 	_sprite.draw(); // Sprite Drawing
 
 	_colorProgram.unuse();
+	*/
 
 	SDL_GL_SwapWindow(_window);
 }
+

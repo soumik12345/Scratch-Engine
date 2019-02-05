@@ -1,2 +1,7 @@
-﻿  Sprite.cpp
+﻿  MainGame.cpp
+  Primitives.cpp
+c:\workspace\projects\programs\game engine\opengl\scratch engine\scratch_engine\scratch_engine\primitives.cpp(10): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\workspace\projects\programs\game engine\opengl\scratch engine\scratch_engine\scratch_engine\primitives.cpp(11): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\workspace\projects\programs\game engine\opengl\scratch engine\scratch_engine\scratch_engine\primitives.cpp(12): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  Generating Code...
   Scratch_Engine.vcxproj -> C:\Workspace\Projects\Programs\Game Engine\Opengl\Scratch Engine\Scratch_Engine\Debug\Scratch_Engine.exe
