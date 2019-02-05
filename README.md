@@ -29,3 +29,7 @@ Applied a simple Vertex Shader and Fragment Shader on the Sprite.
 ### 6. Create Color Gradients using Shaders
 
 <img src="https://github.com/soumik12345/Scratch-Engine/blob/master/Images/Shader%20Experiments.png" width="576" height="324" />
+
+### 7. DDA Line Generation Algorithm
+
+<img src="https://github.com/soumik12345/Scratch-Engine/blob/master/Images/DDALine_Generation.png" width="576" height="324" />
